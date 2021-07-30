@@ -12,7 +12,7 @@ def read(file_name: str) -> str:
 
 setup(
     name="rizonpy",
-    version="0.5.5",  # DO NOT EDIT THIS LINE MANUALLY. LET bump2version UTILITY DO IT
+    version="0.5.6",  # DO NOT EDIT THIS LINE MANUALLY. LET bump2version UTILITY DO IT
     author="psy2848048",
     author_email="psy2848048@gamil.com",
     description="Tools for Rizon platform wallet management and offline transaction signing",
