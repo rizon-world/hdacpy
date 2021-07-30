@@ -2,7 +2,7 @@ import json
 import pytest
 from unittest.mock import Mock
 
-from hdacpy.transaction import Transaction
+from rizonpy.transaction import Transaction
 
 
 def test_sign():
@@ -19,13 +19,13 @@ def test_sign():
                 "value": {
                     "inputs": [
                         {
-                            "address": "friday1qperwt9wrnkg5k9e5gzfgjppzpqhyav5j24d66",
+                            "address": "rizon18hpkjfem5j0htm2gh4zjfvdahraskp2jk9klan",
                             "coins": [{"amount": "1", "denom": "STAKE"}],
                         }
                     ],
                     "outputs": [
                         {
-                            "address": "friday1yeckxz7tapz34kjwnjxvmxzurerquhtrmxmuxt",
+                            "address": "rizon1akujfn8qh9c7ayu0j40m2adnqf0nxutk3fq8kj",
                             "coins": [{"amount": "1", "denom": "STAKE"}],
                         }
                     ],
@@ -37,12 +37,12 @@ def test_sign():
     tx = Transaction(
         host="http://localhost:1317",
         privkey=private_key,
-        chain_id="friday-devnet",
+        chain_id="friday-devtest",
     )
     tx._get_sign_message = Mock(return_value=unordered_sign_message)  # type: ignore
 
     expected_signature = (
-        "5YvLtcxp3BzxCTGM6TlKZ//nNBakmWyUrvydJgOCeQAc5DnFEnm5/Q48zEtEHy0dS3iNB7KH/ykqcYnWGHWbNQ=="
+        "q9+/6SEM+p5JrWr1I0RREfbZ6fxKdgZUSBBXcD64WMYE+8uh91ql8aWIHAI9WEN/d3+uOkmW8GPfQp2KES2jIQ=="
     )
 
     actual_signature = tx._sign()

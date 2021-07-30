@@ -3,10 +3,10 @@ import hashlib
 import bech32
 import ecdsa
 from mnemonic import Mnemonic
-from hdacpy.type import Wallet
-import hdacpy.bip39_bip44_process as bip_to_mnemonic
+from rizonpy.type import Wallet
+import rizonpy.bip39_bip44_process as bip_to_mnemonic
 
-PREFIX = "friday"
+PREFIX = "rizon"
 KEYWORD_PUB = "pub"
 
 
@@ -27,9 +27,13 @@ def privkey_to_pubkey(privkey: str) -> str:
 
 def pubkey_to_address(pubkey: str) -> str:
     pubkey_bytes = bytes.fromhex(pubkey)
-    blake = hashlib.blake2b(digest_size=32)
-    blake.update(pubkey_bytes)
-    r = blake.digest()
+    c = hashlib.new('sha256')
+    c.update(pubkey_bytes)
+    sha256ed = c.digest()
+
+    addressed = hashlib.new('ripemd160')
+    addressed.update(sha256ed)
+    r = addressed.digest()
     return bech32.bech32_encode(PREFIX, bech32.convertbits(r, 8, 5))
 
 

@@ -11,15 +11,14 @@ def read(file_name: str) -> str:
 
 
 setup(
-    name="hdacpy",
-    version="0.5.5",  # DO NOT EDIT THIS LINE MANUALLY. LET bump2version UTILITY DO IT
+    name="rizonpy",
+    version="0.5.6",  # DO NOT EDIT THIS LINE MANUALLY. LET bump2version UTILITY DO IT
     author="psy2848048",
-    author_email="psy2848048@users.noreply.github.com",
-    description="Tools for Hdac wallet management and offline transaction signing",
-    url="https://github.com/psy2848048/hdacpy",
-    project_urls={"Changelog": "https://github.com/psy2848048/hdacpy/blob/master/CHANGELOG.md"},
-    packages=["hdacpy"],
-    package_data={"hadcpy": ["py.typed"]},
+    author_email="psy2848048@gamil.com",
+    description="Tools for Rizon platform wallet management and offline transaction signing",
+    url="https://github.com/rizon-world/friday-python-client",
+    packages=["rizonpy"],
+    package_data={"rizonpy": ["py.typed"]},
     zip_safe=False,  # For mypy to be able to find the installed package
     install_requires=[
         "ecdsa>=0.14.0,<0.15.0",
@@ -29,7 +28,7 @@ setup(
         "bip32utils",
     ],
     python_requires=">=3.6",
-    keywords="hdac blockchain cryptocurrency python sdk",
+    keywords="rizon blockchain cryptocurrency python sdk",
     classifiers=[
         "Typing :: Typed",
         "License :: OSI Approved :: MIT License",
